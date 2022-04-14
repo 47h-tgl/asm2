@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS21416 | Nguyen Van Minh</title>
+    <style>
+.container{
+    text-align: center;
+}
+.next-icon img{
+    position: absolute;
+    width: 70px;
+    right: 380px;
+    bottom: 375px;
+    cursor: pointer;
+}
+.icon img {
+    position: absolute;
+    width: 70px;
+    left: 380px;
+    bottom: 375px;
+    cursor: pointer;
+}
+    </style>
+    <script>
+        var mangHinh = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpg"
+          
+        ]
+        var index = 0;
+
+        function next() {
+            index++;
+            if (index >= mangHinh.length) {
+                index = 0;
+            }
+            var images = document.getElementById("show");
+            images.src = mangHinh[index];
+            document.getElementById("dem").innerText = index + 1 + '/5';
+        }
+        function prev() {
+            index--;
+            if (index < 0) {
+                index = mangHinh.length - 1;
+            }
+            var images = document.getElementById("show");
+            images.src = mangHinh[index];
+            document.getElementById("dem").innerText = index + 1 + '/5';
+        }
+        function loadAnh() {
+            var t = document.getElementById("show");
+            if (index == 4) {
+                index = 0;
+            } else {
+                index++;
+            }
+            t.src = mangHinh[index];
+
+            document.getElementById("dem").innerHTML = index + 1 + "/5";
+        }
+        setInterval(loadAnh, 3000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Album Ảnh cá nhân</h1>
+        <img src="./images/1.jpg" id="show" width="40%px">
+        <div class="icon">
+            <img src="./lui.jpg" onclick="prev();">
+            
+        </div>
+        <div class="next-icon">
+            <img src="./tien.jpg" onclick="next();">
+        </div>
+        <p id="dem">1/5</p>
+    </div>
+</body>
+</html>

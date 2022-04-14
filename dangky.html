@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ps21416 || Nguyễn Văn Minh</title>
+    <link rel="stylesheet" href="dangky.css">
+    <script>
+        function kiemtra() {
+            var ma = document.getElementById("masv");
+            var hoten = document.getElementById("hoten");
+            var mail = document.getElementById("email");
+            var phone = document.getElementById("sdt");
+            if (ma.value.length == 0) {
+                alert("Mã sinh viên bắt buộc phải có !!");
+            }
+            if (hoten.value.length == 0) {
+                alert("Bạn phải nhập họ tên !!");
+            }
+            if (mail.value.length == 0) {
+                alert("Bạn phải nhập đúng địa chỉ Email !!");
+            }
+            if (phone.value.length < 10 || phone.value.length > 11 || isNaN(phone.value)) {
+                alert("Bạn chưa nhập đúng số điện thoại !!");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="kiemtra()">
+            <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+            <p>
+                <label>Mã sinh viên: </label>
+                <input id="masv" type="text">
+            </p>
+            <p>
+                <label>Họ và tên: </label>
+                <input id="hoten" type="text">
+            </p>
+            <p>
+                <label>Email:</label>
+                <input id="email" type="text">
+            </p>
+            <p>
+                <label>Giới tính:</label>
+            <fieldset>
+                <label><input class="gt" type="radio" name="gender" checked>Nam</label>
+                <label><input class="gt" type="radio" name="gender">Nữ</label>
+            </fieldset>
+            </p>
+            <p>
+                <label>Số điện thoại</label>
+                <input type="text" id="sdt">
+            </p>
+            <p>
+                <label>Sở thích</label>
+            <fieldset>
+                <input class="st" type="checkbox" name="hobbie">Đọc sách
+                <input class="st" type="checkbox" name="hobbie">Du lịch
+                <input class="st" type="checkbox" name="hobbie" checked>Ẩm thực
+                <input class="st" type="checkbox" name="hobbie" checked>Âm nhạc
+                <input class="st" type="checkbox" name="hobbie">Khác
+            </fieldset>
+            </p>
+            <p>
+                <label>Quốc tịch</label>
+                <select>
+                    <option>Chọn quốc tịch</option>
+                    <option>Việt Nam</option>
+                    <option>Thái Lan</option>
+                    <option>Trung Quốc</option>
+                </select>
+            </p>
+            <p>
+                <label>Ghi chú:</label>
+                <textarea tabindex="2" cols="93" rows="10"></textarea>
+            </p>
+            <button>Đăng kí</button>
+        </form>
+    </div>
+</body>
+
+</html>
